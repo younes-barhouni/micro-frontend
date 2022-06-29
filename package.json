@@ -3,12 +3,11 @@
     "version": "0.0.1",
     "description": "React library and web-component that builds on top of @Webpack Module-Federation to provide dynamic components loading",
     "files": [
-      "*.js",
-      "types"
+      "*.js"
     ],
     "scripts": {
       "build": "webpack",
-      "postbuild": "cp -r ./src/types ./dist/types && cp package.json ./dist"
+      "postbuild": "cp package.json ./dist"
     },
     "author": "",
     "license": "ISC",
@@ -34,13 +33,11 @@
       "atomico": "^1.59.0"
     },
     "exports": {
-      "./lib": {
-        "types": "./types/lib.d.ts",
-        "default": "./fed.lib.js"
+      "./loaders": {
+        "default": "./modfed.loaders.js"
       },
-      "./component": {
-        "types": "./types/component.d.ts",
-        "default": "./fed.wc.js"
+      "./index": {
+        "default": "./modfed.index.js"
       }
     }
   }
